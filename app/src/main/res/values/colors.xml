@@ -12,4 +12,5 @@
     <color name="stroke">#B8CAD5</color>
     <color name="white">#FFFFFFFF</color>
     <color name="active">#3461FF</color>
+    <color name="hover">#0091FF</color>
 </resources>
