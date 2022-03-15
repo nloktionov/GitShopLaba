@@ -3,7 +3,9 @@ package com.example.gitshoplaba
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.gitshoplaba.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -12,8 +14,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.bagButton.setOnClickListener {
-//            binding.bagButtonIcon.setColorFilter(Color.RED)
-//        }
+
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction = fragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.fragment_container, ())
+//        fragmentTransaction.commit()
     }
+
+
+
 }
+
+
