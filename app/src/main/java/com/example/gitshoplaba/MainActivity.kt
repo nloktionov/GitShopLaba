@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bagButton.setOnClickListener {
-            binding.bagButtonIcon.setBackgroundColor(Color.RED)
-        }
+//        binding.bagButton.setOnClickListener {
+//            binding.bagButtonIcon.setColorFilter(Color.RED)
+//        }
     }
 }
