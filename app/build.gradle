@@ -6,6 +6,10 @@ plugins {
 
 android {
 
+    lintOptions {
+        disable 'NullSafeMutableLiveData'
+    }
+
     kotlinOptions {
         freeCompilerArgs = ['-Xjvm-default=compatibility']
     }

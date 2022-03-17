@@ -41,6 +41,10 @@ class LoginFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
+        binding.toRegistrationButton.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentLogin_to_fragmentRegister)
+        }
+
         return binding.root
     }
 }

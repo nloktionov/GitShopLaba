@@ -4,16 +4,21 @@ import android.app.Application
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.*
-import androidx.lifecycle.Observer
 import com.example.gitshoplaba.database.RegisterRepository
+import com.example.gitshoplaba.database.RegisterEntity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import java.util.*
+import kotlinx.coroutines.*
 
 class RegisterViewModel(private val repository: RegisterRepository, application: Application): AndroidViewModel(application), Observable {
 
     val users =repository.users
 
     @Bindable
-    val inputUserName = MutableLiveData<String>()
+    val inputUsername = MutableLiveData<String>()
 
     @Bindable
     val inputFirstName = MutableLiveData<String>()
@@ -27,21 +32,69 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
     @Bindable
     val inputRepeatPassword = MutableLiveData<String>()
 
-    @Bindable
-    val errorToast = MutableLiveData<Boolean>()
 
-    fun donetoast() {
+    private val _navigateto = MutableLiveData<Boolean>()
 
-    }
+    val navigateto: LiveData<Boolean>
+        get() = _navigateto
+
+
+    private val viewModelJob = Job()
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+
+
+    private val _errorToast = MutableLiveData<Boolean>()
+    val errorToast: LiveData<Boolean>
+        get() = _errorToast
+
+    private val _errorToastUsername = MutableLiveData<Boolean>()
+    val errorToastUsername: LiveData<Boolean>
+        get() = _errorToastUsername
+
 
     fun submitButton() {
-
+        if (inputFirstName.value == null || inputLastName.value == null || inputUsername.value == null || inputPassword.value == null) {
+            _errorToast.value = true
+        } else {
+            uiScope.launch {
+                val usersNames = repository.getUserName(inputUsername.value!!)
+                if (usersNames != null) {
+                    _errorToastUsername.value = true
+                } else {
+                    val firstName = inputFirstName.value!!
+                    val lastName = inputLastName.value!!
+                    val username = inputUsername.value!!
+                    val password = inputPassword.value!!
+                    insert(RegisterEntity(0, firstName, lastName, username, password))
+                    inputFirstName.value = null
+                    inputLastName.value = null
+                    inputUsername.value = null
+                    inputPassword.value = null
+                    _navigateto.value = true
+                }
+            }
+        }
     }
 
-    fun signUP() {
-
+    override fun onCleared() {
+        super.onCleared()
     }
 
+    fun donetoast() {
+        _errorToast.value = false
+    }
+
+    fun donetoastUserName() {
+        _errorToast.value = false
+    }
+
+    fun doneNavigating() {
+        _navigateto.value = false
+    }
+
+    private fun insert(user: RegisterEntity): Job = viewModelScope.launch {
+        repository.insert(user)
+    }
 
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
     }

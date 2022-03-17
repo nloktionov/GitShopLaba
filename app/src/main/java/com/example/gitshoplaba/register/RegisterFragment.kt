@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.example.gitshoplaba.R
 import com.example.gitshoplaba.database.RegisterDatabase
 import com.example.gitshoplaba.database.RegisterRepository
-import com.example.gitshoplaba.databinding.FragmentLoginBinding
 import com.example.gitshoplaba.databinding.FragmentRegisterBinding
-import com.example.gitshoplaba.login.LoginViewModel
+
 
 class RegisterFragment : Fragment() {
     private lateinit var registerViewModel: RegisterViewModel
@@ -45,13 +42,26 @@ class RegisterFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        registerViewModel.errorToast.observe(this, Observer { hasError ->
-            if (hasError == true) {
-                Toast.makeText(requireContext(), "Заполни все поля, уеба", Toast.LENGTH_SHORT).show()
+        registerViewModel.errorToast.observe(this, Observer { hasError->
+            if(hasError==true){
+                Toast.makeText(requireContext(), "Ебанат, заполни все поля", Toast.LENGTH_SHORT).show()
                 registerViewModel.donetoast()
             }
         })
 
+        registerViewModel.errorToastUsername.observe(this, Observer { hasError->
+            if(hasError==true){
+                Toast.makeText(requireContext(), "Этот телефон уже занят, уеба", Toast.LENGTH_SHORT).show()
+                registerViewModel.donetoastUserName()
+            }
+        })
+
         return binding.root
+    }
+
+
+
+    private fun displayUsersList() {
+
     }
 }

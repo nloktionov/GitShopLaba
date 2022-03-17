@@ -40,6 +40,7 @@
                 android:textColor="@color/typoPrimary"
                 android:alpha=".6"
                 android:layout_marginBottom="8dp"/>
+
             <com.vicmikhailau.maskededittext.MaskedEditText
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -52,7 +53,8 @@
                 android:fontFamily="@font/segoeui_regular"
                 android:inputType="phone"
                 android:digits="0123456789+"
-                app:mask="+7 (###) ###-##-##"/>
+                app:mask="+7 (###) ###-##-##"
+                android:text="@={myRegisterViewModel.inputUsername}"/>
         </LinearLayout>
 
         <LinearLayout
@@ -79,7 +81,8 @@
                 android:textSize="14dp"
                 android:textColor="#002033"
                 android:paddingVertical="8dp"
-                android:fontFamily="@font/segoeui_regular"/>
+                android:fontFamily="@font/segoeui_regular"
+                android:text="@={myRegisterViewModel.inputFirstName}"/>
         </LinearLayout>
 
         <LinearLayout
@@ -106,7 +109,8 @@
                 android:textSize="14dp"
                 android:textColor="#002033"
                 android:paddingVertical="8dp"
-                android:fontFamily="@font/segoeui_regular"/>
+                android:fontFamily="@font/segoeui_regular"
+                android:text="@={myRegisterViewModel.inputLastName}"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="16dp"
@@ -132,7 +136,8 @@
                 android:textSize="14dp"
                 android:textColor="#002033"
                 android:paddingVertical="8dp"
-                android:fontFamily="@font/segoeui_regular"/>
+                android:fontFamily="@font/segoeui_regular"
+                android:text="@={myRegisterViewModel.inputPassword}"/>
         </LinearLayout>
 
         <LinearLayout
@@ -159,12 +164,13 @@
                 android:textSize="14dp"
                 android:textColor="#002033"
                 android:paddingVertical="8dp"
-                android:fontFamily="@font/segoeui_regular"/>
+                android:fontFamily="@font/segoeui_regular"
+                android:text="@={myRegisterViewModel.inputRepeatPassword}"/>
         </LinearLayout>
 
         <Button
             android:layout_marginTop="32dp"
-            android:id="@+id/button"
+            android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="Войти"
@@ -173,7 +179,8 @@
             android:fontFamily="@font/segoeui_bold"
             android:textAllCaps="false"
             android:background="@drawable/button"
-            android:stateListAnimator="@null"/>
+            android:stateListAnimator="@null"
+            android:onClick="@{()->myRegisterViewModel.submitButton()}"/>
 
         <TextView
             android:textAlignment="center"
