@@ -15,25 +15,22 @@ abstract class RegisterDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: RegisterDatabase? = null
 
-
         fun getInstance(context: Context): RegisterDatabase {
-            synchronized(this) {
+            synchronized(this) {}
+            var instance = INSTANCE
 
-                var instance = INSTANCE
-
-                if (instance == null) {
-                    instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        RegisterDatabase::class.java,
-                        "user_details_database"
-                    )
-                        .fallbackToDestructiveMigration()
-                        .build()
-
-                    INSTANCE = instance
-                }
-                return instance
+            if (instance == null) {
+                instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    RegisterDatabase::class.java,
+                    "user_details_database"
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
             }
+            return instance
         }
+
     }
+
 }

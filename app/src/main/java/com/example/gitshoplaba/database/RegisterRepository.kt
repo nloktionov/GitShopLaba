@@ -11,4 +11,5 @@ class RegisterRepository(private val dao: RegisterDatabaseDao) {
     suspend fun getUserName(userName: String): RegisterEntity? {
         return dao.getUsername(userName)
     }
+
 }
