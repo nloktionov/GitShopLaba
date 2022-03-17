@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="64dp">
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вход"
+            android:textSize="24sp"
+            android:fontFamily="@font/segoeui_regular"
+            android:textColor="@color/typoPrimary"
+            android:layout_marginBottom="32dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Номер телефона"
+                android:textSize="14sp"
+                android:fontFamily="@font/segoeui_regular"
+                android:textColor="@color/typoPrimary"
+                android:alpha=".6"
+                android:layout_marginBottom="8dp"/>
+            <com.vicmikhailau.maskededittext.MaskedEditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="+7 (9XX) XXX XX XX"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/custom_input"
+                android:textSize="14dp"
+                android:textColor="#002033"
+                android:paddingVertical="8dp"
+                android:fontFamily="@font/segoeui_regular"
+                android:inputType="phone"
+                android:digits="0123456789+"
+                app:mask="+7 (###) ###-##-##"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Имя"
+                android:textSize="14sp"
+                android:fontFamily="@font/segoeui_regular"
+                android:textColor="@color/typoPrimary"
+                android:alpha=".6"
+                android:layout_marginBottom="8dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Ваше имя"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/custom_input"
+                android:textSize="14dp"
+                android:textColor="#002033"
+                android:paddingVertical="8dp"
+                android:fontFamily="@font/segoeui_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Фамилия"
+                android:textSize="14sp"
+                android:fontFamily="@font/segoeui_regular"
+                android:textColor="@color/typoPrimary"
+                android:alpha=".6"
+                android:layout_marginBottom="8dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Ваша фамилия"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/custom_input"
+                android:textSize="14dp"
+                android:textColor="#002033"
+                android:paddingVertical="8dp"
+                android:fontFamily="@font/segoeui_regular"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Пароль"
+                android:textSize="14sp"
+                android:fontFamily="@font/segoeui_regular"
+                android:textColor="@color/typoPrimary"
+                android:alpha=".6"
+                android:layout_marginBottom="8dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Придумайте пароль"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/custom_input"
+                android:textSize="14dp"
+                android:textColor="#002033"
+                android:paddingVertical="8dp"
+                android:fontFamily="@font/segoeui_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Повторите пароль"
+                android:textSize="14sp"
+                android:fontFamily="@font/segoeui_regular"
+                android:textColor="@color/typoPrimary"
+                android:alpha=".6"
+                android:layout_marginBottom="8dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Введите пароль повторно"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/custom_input"
+                android:textSize="14dp"
+                android:textColor="#002033"
+                android:paddingVertical="8dp"
+                android:fontFamily="@font/segoeui_regular"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="32dp"
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Войти"
+            android:padding="0dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/segoeui_bold"
+            android:textAllCaps="false"
+            android:background="@drawable/button"
+            android:stateListAnimator="@null"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Уж есть аккаунт?"
+            android:textSize="14sp"
+            android:fontFamily="@font/segoeui_regular"
+            android:textColor="@color/typoPrimary"
+            android:alpha=".6"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="32dp"/>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

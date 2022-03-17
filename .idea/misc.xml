@@ -3,10 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/drawable/ic_bag.xml" value="0.1865" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/drawable/ic_shop.xml" value="0.1865" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/drawable/ic_user.xml" value="0.1865" />
         <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/acitivity_register.xml" value="0.25" />
-        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/activity_main_ex.xml" value="0.2" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/activity_main_exx.xml" value="0.25" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/fragment_blank.xml" value="0.25" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/fragment_categories.xml" value="0.2" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/fragment_register.xml" value="0.25" />
         <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/kategories_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Sterb/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/login_ok.xml" value="0.25" />
         <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLaba/app/src/main/res/layout/activity_main.xml" value="0.3859375" />
         <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/drawable/button.xml" value="0.2175" />
         <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/drawable/custom_input.xml" value="0.2175" />
@@ -14,11 +23,6 @@
         <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/acitivity_register.xml" value="0.4" />
         <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/activity_main_ex.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/fragment_blank.xml" value="0.21041666666666667" />
-        <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/fragment_fullscreen.xml" value="0.3859375" />
-        <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/fragment_login.xml" value="0.264" />
-        <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/fragment_register.xml" value="0.4" />
-        <entry key="..\:/Users/nloktionov/AndroidStudioProjects/GitShopLabaGit/app/src/main/res/layout/login_ok.xml" value="0.2" />
       </map>
     </option>
   </component>
