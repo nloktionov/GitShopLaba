@@ -172,6 +172,8 @@
             android:stateListAnimator="@null"/>
 
         <TextView
+            android:textAlignment="center"
+            android:id="@+id/toLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Уже есть аккаунт?"
@@ -180,7 +182,8 @@
             android:textColor="@color/typoPrimary"
             android:alpha=".6"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="16dp"
+            android:padding="16dp"/>
 
     </LinearLayout>
 

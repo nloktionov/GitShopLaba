@@ -1,4 +1,4 @@
-package com.example.gitshoplaba
+package com.example.gitshoplaba.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

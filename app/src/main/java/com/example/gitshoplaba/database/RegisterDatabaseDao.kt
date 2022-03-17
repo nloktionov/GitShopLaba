@@ -1,4 +1,4 @@
-package com.example.gitshoplaba
+package com.example.gitshoplaba.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Insert

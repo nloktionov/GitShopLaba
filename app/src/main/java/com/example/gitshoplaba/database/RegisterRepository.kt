@@ -1,4 +1,4 @@
-package com.example.gitshoplaba
+package com.example.gitshoplaba.database
 
 class RegisterRepository(private val dao: RegisterDatabaseDao) {
 
@@ -8,7 +8,7 @@ class RegisterRepository(private val dao: RegisterDatabaseDao) {
         return dao.insert(user)
     }
 
-    suspend fun getUserName(userName: String):RegisterEntity? {
+    suspend fun getUserName(userName: String): RegisterEntity? {
         return dao.getUsername(userName)
     }
 }

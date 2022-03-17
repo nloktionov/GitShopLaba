@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
+
+    <data>
+        <variable
+            name="myLoginViewModel"
+            type="com.example.gitshoplaba.login.LoginViewModel" />
+    </data>
 
     <LinearLayout
         app:layout_constraintTop_toTopOf="parent"
@@ -92,6 +96,7 @@
             android:stateListAnimator="@null"/>
 
         <TextView
+            android:id="@+id/toRegistrationButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="У меня нет аккаунта"
@@ -100,11 +105,12 @@
             android:textColor="@color/typoPrimary"
             android:alpha=".6"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="16dp"
+            android:padding="16dp"/>
 
     </LinearLayout>
 
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
