@@ -10,7 +10,21 @@
     android:background="#F1CECE"
     android:orientation="vertical"
     android:gravity="bottom">
+<TextView
+    android:text="Каталог товаров"
+    android:layout_marginStart="80dp"
+    android:textColor="@color/black"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_marginTop="100dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="bottom" />
 
     <LinearLayout
         android:layout_width="match_parent"
