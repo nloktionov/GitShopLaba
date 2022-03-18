@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:paddingHorizontal="64dp">
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,20 +41,29 @@
                 android:alpha=".6"
                 android:layout_marginBottom="8dp"/>
 
-            <com.vicmikhailau.maskededittext.MaskedEditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameInputTextInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="+7 (9XX) XXX XX XX"
-                android:paddingHorizontal="8dp"
-                android:background="@drawable/custom_input"
-                android:textSize="14dp"
-                android:textColor="#002033"
-                android:paddingVertical="8dp"
-                android:fontFamily="@font/segoeui_regular"
-                android:inputType="phone"
-                android:digits="0123456789+"
-                app:mask="+7 (###) ###-##-##"
-                android:text="@={myRegisterViewModel.inputUsername}"/>
+                android:layout_height="match_parent"
+                app:hintEnabled="false"
+                app:helperTextEnabled="false"
+                app:helperTextTextColor="@color/alert">
+                <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:id="@+id/inputUsernameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="+7 (9XX) XXX XX XX"
+                    android:paddingHorizontal="8dp"
+                    android:background="@drawable/custom_input"
+                    android:textSize="14dp"
+                    android:textColor="#002033"
+                    android:paddingVertical="8dp"
+                    android:fontFamily="@font/segoeui_regular"
+                    android:inputType="phone"
+                    android:digits="0123456789+"
+                    app:mask="+7 (###) ###-##-##"
+                    android:text="@={myRegisterViewModel.inputUsername}"/>
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -72,7 +81,8 @@
                 android:textColor="@color/typoPrimary"
                 android:alpha=".6"
                 android:layout_marginBottom="8dp"/>
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Ваше имя"
@@ -82,7 +92,7 @@
                 android:textColor="#002033"
                 android:paddingVertical="8dp"
                 android:fontFamily="@font/segoeui_regular"
-                android:text="@={myRegisterViewModel.inputFirstName}"/>
+                android:text="@={myRegisterViewModel.inputFirstName}" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +110,7 @@
                 android:textColor="@color/typoPrimary"
                 android:alpha=".6"
                 android:layout_marginBottom="8dp"/>
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Ваша фамилия"
@@ -127,7 +137,7 @@
                 android:textColor="@color/typoPrimary"
                 android:alpha=".6"
                 android:layout_marginBottom="8dp"/>
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Придумайте пароль"
@@ -155,7 +165,8 @@
                 android:textColor="@color/typoPrimary"
                 android:alpha=".6"
                 android:layout_marginBottom="8dp"/>
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/PasswordTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Введите пароль повторно"

@@ -43,23 +43,37 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
 
-    private val _errorToast = MutableLiveData<Boolean>()
-    val errorToast: LiveData<Boolean>
-        get() = _errorToast
+    private val _errorFillAllField = MutableLiveData<Boolean>()
+    val errorFillAllField: LiveData<Boolean>
+        get() = _errorFillAllField
 
-    private val _errorToastUsername = MutableLiveData<Boolean>()
-    val errorToastUsername: LiveData<Boolean>
-        get() = _errorToastUsername
+    private val _errorPasswordNotAlike = MutableLiveData<Boolean>()
+    val errorPasswordNotAlike: LiveData<Boolean>
+        get() = _errorPasswordNotAlike
+
+    private val _errorUsernameTaken = MutableLiveData<Boolean>()
+    val errorUsernameTaken: LiveData<Boolean>
+        get() = _errorUsernameTaken
+
+//    private val _errorToast = MutableLiveData<Boolean>()
+//    val errorToast: LiveData<Boolean>
+//        get() = _errorToast
+//
+//    private val _errorToastUsername = MutableLiveData<Boolean>()
+//    val errorToastUsername: LiveData<Boolean>
+//        get() = _errorToastUsername
 
 
     fun submitButton() {
         if (inputFirstName.value == null || inputLastName.value == null || inputUsername.value == null || inputPassword.value == null) {
-            _errorToast.value = true
+            _errorFillAllField.value = true
+        } else if (inputPassword.value != inputRepeatPassword.value) {
+            _errorPasswordNotAlike.value = true
         } else {
             uiScope.launch {
                 val usersNames = repository.getUserName(inputUsername.value!!)
                 if (usersNames != null) {
-                    _errorToastUsername.value = true
+                    _errorUsernameTaken.value = true
                 } else {
                     val firstName = inputFirstName.value!!
                     val lastName = inputLastName.value!!
@@ -76,16 +90,45 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
         }
     }
 
+
+//    fun submitButton() {
+//        if (inputFirstName.value == null || inputLastName.value == null || inputUsername.value == null || inputPassword.value == null) {
+//            _errorToast.value = true
+//        } else {
+//            uiScope.launch {
+//                val usersNames = repository.getUserName(inputUsername.value!!)
+//                if (usersNames != null) {
+//                    _errorToastUsername.value = true
+//                } else {
+//                    val firstName = inputFirstName.value!!
+//                    val lastName = inputLastName.value!!
+//                    val username = inputUsername.value!!
+//                    val password = inputPassword.value!!
+//                    insert(RegisterEntity(0, firstName, lastName, username, password))
+//                    inputFirstName.value = null
+//                    inputLastName.value = null
+//                    inputUsername.value = null
+//                    inputPassword.value = null
+//                    _navigateto.value = true
+//                }
+//            }
+//        }
+//    }
+
     override fun onCleared() {
         super.onCleared()
     }
 
-    fun donetoast() {
-        _errorToast.value = false
+//    fun donetoast() {
+//        _errorToast.value = false
+//    }
+//
+    fun donetoastPassword() {
+        _errorPasswordNotAlike.value = false
     }
 
     fun donetoastUserName() {
-        _errorToast.value = false
+        _errorUsernameTaken.value = false
     }
 
     fun doneNavigating() {

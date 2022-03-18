@@ -1,10 +1,15 @@
 package com.example.gitshoplaba.register
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doOnTextChanged
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -42,19 +47,36 @@ class RegisterFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        registerViewModel.errorToast.observe(this, Observer { hasError->
-            if(hasError==true){
-                Toast.makeText(requireContext(), "Ебанат, заполни все поля", Toast.LENGTH_SHORT).show()
-                registerViewModel.donetoast()
-            }
-        })
-
-        registerViewModel.errorToastUsername.observe(this, Observer { hasError->
-            if(hasError==true){
+        registerViewModel.errorUsernameTaken.observe(this, Observer { hasError ->
+            if(hasError==true) {
                 Toast.makeText(requireContext(), "Этот телефон уже занят, уеба", Toast.LENGTH_SHORT).show()
+                binding.usernameInputTextInputLayout.isHelperTextEnabled = true
+                binding.usernameInputTextInputLayout.helperText = "Данный телефон уже занят"
+                binding.inputUsernameEditText.background.state = intArrayOf(R.attr.state_error)
                 registerViewModel.donetoastUserName()
             }
         })
+
+        registerViewModel.errorPasswordNotAlike.observe(this, Observer { hasError ->
+            if (hasError == true) {
+                Toast.makeText(requireContext(), "Пароль", Toast.LENGTH_SHORT).show()
+                registerViewModel.donetoastPassword()
+            }
+        })
+
+//        registerViewModel.errorToast.observe(this, Observer { hasError->
+//            if(hasError==true){
+//                Toast.makeText(requireContext(), "Ебанат, заполни все поля", Toast.LENGTH_SHORT).show()
+//                registerViewModel.donetoast()
+//            }
+//        })
+//
+//        registerViewModel.errorToastUsername.observe(this, Observer { hasError->
+//            if(hasError==true){
+//                Toast.makeText(requireContext(), "Этот телефон уже занят, уеба", Toast.LENGTH_SHORT).show()
+//                registerViewModel.donetoastUserName()
+//            }
+//        })
 
         return binding.root
     }
@@ -64,4 +86,6 @@ class RegisterFragment : Fragment() {
     private fun displayUsersList() {
 
     }
+
 }
+
